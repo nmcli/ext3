@@ -1,0 +1,67 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: httpd-route
+  namespace: demo
+  labels:
+    type: sharded
+spec:
+  host: cys.apache.com
+  path: /
+  port:
+    targetPort: 8080
+  tls:
+    certificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIDCzCCAfMCFHVJIbwSPHGYClfWwncjgkIiJcTiMA0GCSqGSIb3DQEBCwUAMEIx
+      CzAJBgNVBAYTAlhYMRUwEwYDVQQHDAxEZWZhdWx0IENpdHkxHDAaBgNVBAoME0Rl
+      ZmF1bHQgQ29tcGFueSBMdGQwHhcNMjUwMTA2MDE0MTM2WhcNMjYwMTA2MDE0MTM2
+      WjBCMQswCQYDVQQGEwJYWDEVMBMGA1UEBwwMRGVmYXVsdCBDaXR5MRwwGgYDVQQK
+      DBNEZWZhdWx0IENvbXBhbnkgTHRkMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+      CgKCAQEAyMurO+GtxRNPvXwQ1TllqAMXGwNiw3XU9v6vTzAmvFW/a5ZYCCjYhcy3
+      0B6p7iMXKbo8NZwqaaxgZYtNYdTORzHCWTXfXum8uF3uM0QjJ3kH5a4uUogK30SP
+      Vvwd/ykErVuIh2CyHa9X1EJ7AQvLCktoE675HQ5wI1q6S6Srclm3WJAtuksF6uUZ
+      Z+KCbYbaiWGjJMwtR/c1lQYduxTseuashVPL3rYoQXwr8fQO9w3ppUqsPIE0B/vJ
+      2ENDPLnPe+hNaUP93xRw5OZNBzYuyD5PDVjhoSqBinSlUUSLmulr3isyrMhHKHcV
+      CjNiRHgZ7rO0Jo9MLTYJFgA6eieBgQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCD
+      Pm+VQCQRvIUxgb/p1dtkpAn2GhVnaIiAOi2PxXzrrg/PowcsA4MdxvW0qrAw4YXI
+      Df1BEz137IkqfahSoAA/majk231i9kUQEXLgvKIsD282Sfh/Gz+G9/FbUoJOWs9z
+      HS+FetHv/A41nQlDuPsDJiYq9IXlbgsNdklPQPKHhNFKwEZdDA2G7EDNB1LWSMMn
+      GxvtlflSwx6+OouIlAWnZfj94q8Df12DEfKU6qBbflflJpvQIbYmxNJmRy1Jru3v
+      0ndujJgEJ6DelpAoJ5bSxDGf4GpKxUbMh0np8oQeXnvW7LbNncaxD3+vqsLNnKKO
+      NsFIcrOlR3TqEocBYff8
+      -----END CERTIFICATE-----
+    key: |-
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEpgIBAAKCAQEAyMurO+GtxRNPvXwQ1TllqAMXGwNiw3XU9v6vTzAmvFW/a5ZY
+      CCjYhcy30B6p7iMXKbo8NZwqaaxgZYtNYdTORzHCWTXfXum8uF3uM0QjJ3kH5a4u
+      UogK30SPVvwd/ykErVuIh2CyHa9X1EJ7AQvLCktoE675HQ5wI1q6S6Srclm3WJAt
+      uksF6uUZZ+KCbYbaiWGjJMwtR/c1lQYduxTseuashVPL3rYoQXwr8fQO9w3ppUqs
+      PIE0B/vJ2ENDPLnPe+hNaUP93xRw5OZNBzYuyD5PDVjhoSqBinSlUUSLmulr3isy
+      rMhHKHcVCjNiRHgZ7rO0Jo9MLTYJFgA6eieBgQIDAQABAoIBAQDC0jHTCPWUKFeP
+      Dug6KdWDPXRWpmNWKGa4O4YW/C4pP71ZgubpC9CBiY6zJH1V68AWoXa3wUy5eSGS
+      hKVRDawTEaly6z1OFtUfwStTnIHLU7gg1m5lb0+1Lw0wpa/pGYBLP2tphp1rBeze
+      qp4z9qBK3b0ek/9qfM66ztXAfQZIDB+Dae4jIHKXH3tk0h1NanLBco7kTPvytJKX
+      QRHXBid7tehahexlISpb7Cm0XHH5ZuGzCp2COK8iFXoDffiPz0kWMq5LbqjkFxDm
+      pFXkekjslHrRm62zQWRp7tBfZNbA+GqVOhlkmE6/ei2FgVjCtfXhyghwozlDWCjM
+      vcGPdo0BAoGBAP26C/Dw0ggyKtDF2vyRdtRaQjAEz6KFMIPoJeNGFBy2Agoyfig2
+      dQYX77593arKW4Vl/BtumUKueoGD+nXP0XV47U5cAvwFtGF/4i2Nmtr6NNjyWdxc
+      LzrkZS2liaVkfM2dDJpb5/FvuOD1qxsVo63JIEuD5C3MxdWKzHJWiicxAoGBAMqY
+      N9eeL9w9Px1ljp9JG3YWLC65X3BxuyeGRKLLQXufZcd6RJRbufFudYqWXjrDlD6g
+      ++TZ8WPsAgqBpCGvoHTBGKIyNF5NgDMXEXJg9ofBshmZo7GqjXkEMvFzrO2zoa+5
+      e0MzK3hoBbqgLpowuy1axXyqfwz5YSnp/NqoYgtRAoGBAKqOI3TFDQqBXpKUTY41
+      4iEAwzkwIrrmuSQSK1XJR7+9AUYFhxRU9vkvofL0/MrP2BGl6oAuKkvOqX7iTrxf
+      BDfpH+vqof7zfruDkXB5nbzRMDEdSBZ+ySjXWsQCYLKTB+nXRh+E5DdBmI9v1KMS
+      OsKZTmI0uG+pFNtkv+WkEp4hAoGBAK3vZfIeg6SoiKlqabpjf8owWxp6WHAnlLDo
+      W8EQlFXYkf9i/8IHxmp7lTq4wondJEdo2xqt6ssI8u+mQg4RxMa4ibenNsLH8wrq
+      ATab/MytBYVpHNsKPI/rhPk7gPpLQMOnkSYupmGnnVOO9rO2ptzXk7nmf1HaQQtF
+      Mqtf6V0hAoGBAOIW/2jYB9gMMPZX1YNjdRMWNB/Xn7sw0Yo/rA/Qc6ObYmmk582p
+      E2Roo/wOwg6B7gO1mBMkg6hAAzuMs5TsXaXqKRoCjdBGOu6cdrPFE8xJ4PalYiLS
+      j+pFOg4irhmFRHVLHuwdCmqhsF81Uantw+veuvPcWczW0odkNq2j86FV
+      -----END RSA PRIVATE KEY-----
+    termination: edge
+  to:
+    kind: Service
+    name: httpd-service
+    weight: 100
+  wildcardPolicy: None
