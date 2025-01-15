@@ -1,3 +1,3 @@
-FROM image-registry.openshift-image-registry.svc:5000/registry/httpd-24:latest
+FROM default-route-openshift-image-registry.apps.ext3.mtp.local/registry/httpd-24:latest
 
 COPY ./exam /usr/local/apache2/htdocs
