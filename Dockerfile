@@ -2,4 +2,4 @@ FROM default-route-openshift-image-registry.apps.ext3.mtp.local/registry/httpd-2
 
 COPY ./index.html /var/www/html/
 
-CMD ["httpd-foreground"]
+#CMD ["httpd-foreground"]
